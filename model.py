@@ -91,11 +91,14 @@ from fpdf import FPDF
 import google.generativeai as genai
 import os
 from datetime import datetime
-import configparser
+# import configparser
 
-config = configparser.ConfigParser()
-config.read('C:/Users/SAKSHI/Desktop/March_backend/secret.properties')
-API_KEY = config.get('DEFAULT', 'API_KEY')
+# config = configparser.ConfigParser()
+# config.read('C:/Users/SAKSHI/Desktop/March_backend/secret.properties')
+# API_KEY = config.get('DEFAULT', 'API_KEY')
+ 
+
+API_KEY = os.getenv('API_KEY')
 genai.configure(api_key=API_KEY)
 
 app = Flask(__name__)
